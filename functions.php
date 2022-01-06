@@ -33,6 +33,19 @@
             'sanitize_js_callback' => '',
             'dirty' => false,
         ) );
+
+        $wp_customize -> add_control ( 'sample_default_text',
+        array(
+            'label' => 'Default text control',
+            'description' => 'This is a text type control',
+            'section' => 'custom_control_section',
+            'priority' => 10,
+            'type' => 'text',
+            'capability' => 'edit_theme_option',
+            'input_attrs' => array(
+                'placeholder' => 'Enter full name'
+            ),
+        ) );
     }
     
     add_action( 'customize_register', 'mytheme_customize_register' );
