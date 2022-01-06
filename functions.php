@@ -55,6 +55,21 @@
    
     function background_color_css() {
 
+        $primary_color = get_theme_mod( 'sample_default_text', '#00a9e0' );
+
+        $estore_internal_css = '';
+
+        if ( $primary_color != '#00a9e0' ) {
+            $estore_internal_css = 'body{background-color:'.$primary_color.'; }';
+        }
+
+        if ( ! empty( $estore_internal_css ) ) {
+    ?>
+    
+        <style type="text/css"><?php echo $estore_internal_css; ?></style>
+
+    <?php
+        }
     }
 
     add_action('wp_head','background_color_css');
