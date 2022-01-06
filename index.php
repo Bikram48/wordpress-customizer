@@ -1,2 +1,2 @@
 <?php
-    echo "Welcome!";
+    get_header();
