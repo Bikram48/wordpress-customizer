@@ -20,6 +20,19 @@
             'active_callback' => '',
             'description_hidden' => 'false',
         ) );
+
+        $wp_customize -> add_setting ( 'sample_default_text',
+        array(
+            'default' => '',
+            'transport' => 'refresh',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_option',
+            'theme_supports' => '',
+            'validate_callback' => '',
+            'sanitize_callback' => '',
+            'sanitize_js_callback' => '',
+            'dirty' => false,
+        ) );
     }
     
     add_action( 'customize_register', 'mytheme_customize_register' );
