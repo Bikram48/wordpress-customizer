@@ -37,6 +37,20 @@
     
     add_action( 'customize_register', 'mytheme_customize_register' );
 
+    function estore_customize_preview_js() {
+        
+        error_log(print_r(get_template_directory_uri(),true));
+
+	    wp_enqueue_script( 
+          'mytheme-themecustomizer',            
+          get_template_directory_uri().'/customizer.js',
+          '',   
+          '',                   
+          true                     
+        );
+	}
+    
+    add_action( 'customize_preview_init', 'estore_customize_preview_js' );
 
 
 
