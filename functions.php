@@ -49,8 +49,16 @@
           true                     
         );		 
     }
-    
+
     add_action( 'customize_controls_enqueue_scripts', 'estore_customize_preview_js' );
+
+   
+    function background_color_css() {
+
+    }
+
+    add_action('wp_head','background_color_css');
+
 
 
 
