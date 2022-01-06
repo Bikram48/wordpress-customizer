@@ -47,10 +47,10 @@
           '',   
           '',                   
           true                     
-        );
-	}
+        );		 
+    }
     
-    add_action( 'customize_preview_init', 'estore_customize_preview_js' );
+    add_action( 'customize_controls_enqueue_scripts', 'estore_customize_preview_js' );
 
 
 
