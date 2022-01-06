@@ -22,6 +22,7 @@
             'transport' => 'refresh',
             'type' => 'theme_mod',
             'theme_supports' => '',
+            'sanitize_callback' => 'hex_color_sanitize'
         ) );
 
         $wp_customize->add_control( 'sample_default_text',
@@ -36,6 +37,14 @@
     }
     
     add_action( 'customize_register', 'mytheme_customize_register' );
+
+    function hex_color_sanitize( $color ) {
+		if ( $unhashed = sanitize_hex_color_no_hash( $color ) ) {
+			return '#' . $unhashed;
+		}
+
+		return $color;
+	}
 
     function estore_customize_preview_js() {
         
